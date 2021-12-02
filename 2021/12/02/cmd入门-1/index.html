@@ -28,7 +28,7 @@
 <meta property="og:description" content="经常在不同地方都能看到.bat的批处理文件，自己也从网上下载并使用过一些。没记错的话，几年前自己还学着写过简单的bat文件来处理图片的命名和复制之类的操作。 终于决定养成习惯整理下自己学习的技术知识，以期能沉淀下来并且温故知新，帮助自己的技术水平提升。那么借此机会，学习整理下自己可能会用到的批处理常用命令。 最后，因为搭建了这个博客，常用git上传，总是add+commit+push三连发也觉得颇">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-02T08:18:28.000Z">
-<meta property="article:modified_time" content="2021-12-02T08:19:26.567Z">
+<meta property="article:modified_time" content="2021-12-02T09:19:54.539Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="脚本">
 <meta property="article:tag" content="cmd">
@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-02 16:18:28 / Modified: 16:19:26" itemprop="dateCreated datePublished" datetime="2021-12-02T16:18:28+08:00">2021-12-02</time>
+              <time title="Created: 2021-12-02 16:18:28 / Modified: 17:19:54" itemprop="dateCreated datePublished" datetime="2021-12-02T16:18:28+08:00">2021-12-02</time>
             </span>
 
           
@@ -193,6 +193,16 @@
         <p>经常在不同地方都能看到.bat的批处理文件，自己也从网上下载并使用过一些。没记错的话，几年前自己还学着写过简单的bat文件来处理图片的命名和复制之类的操作。</p>
 <p>终于决定养成习惯整理下自己学习的技术知识，以期能沉淀下来并且温故知新，帮助自己的技术水平提升。那么借此机会，学习整理下自己可能会用到的批处理常用命令。</p>
 <p>最后，因为搭建了这个博客，常用git上传，总是<code>add+commit+push</code>三连发也觉得颇无趣，不如编写个上传的bat文件，包含更新发布的<code>hexo</code>命令，每次执行一下替代重复劳动。</p>
+<ol>
+<li><h5 id="look-bat：-查看效果"><a href="#look-bat：-查看效果" class="headerlink" title="look.bat： 查看效果"></a>look.bat： 查看效果</h5></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">call hexo g</span><br><span class="line">call hexo s</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>deploy.bat: 上传到github仓库</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">call hexo g</span><br><span class="line">echo Posts generated and renewed!</span><br><span class="line">call cd ./public/</span><br><span class="line">call git add -all</span><br><span class="line">call git commit -m &quot;new post%date%&quot;</span><br><span class="line">call git push -u origin</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -274,6 +284,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#look-bat%EF%BC%9A-%E6%9F%A5%E7%9C%8B%E6%95%88%E6%9E%9C"><span class="nav-number">1.</span> <span class="nav-text">look.bat： 查看效果</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
