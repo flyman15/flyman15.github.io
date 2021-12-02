@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-02 16:18:28 / Modified: 17:19:54" itemprop="dateCreated datePublished" datetime="2021-12-02T16:18:28+08:00">2021-12-02</time>
+              <time title="Created: 2021-12-02 16:18:28 / Modified: 17:31:16" itemprop="dateCreated datePublished" datetime="2021-12-02T16:18:28+08:00">2021-12-02</time>
             </span>
 
           
@@ -193,10 +193,28 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">call hexo g</span><br><span class="line">call hexo s</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>deploy.bat: 上传到github仓库</li>
+<li><h5 id="deploy-bat-上传到github仓库"><a href="#deploy-bat-上传到github仓库" class="headerlink" title="deploy.bat: 上传到github仓库"></a>deploy.bat: 上传到github仓库</h5></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">call hexo g</span><br><span class="line">echo Posts generated and renewed!</span><br><span class="line">call cd ./public/</span><br><span class="line">call git add -all</span><br><span class="line">call git commit -m &quot;new post%date%&quot;</span><br><span class="line">call git push -u origin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">call hexo g</span><br><span class="line">echo Posts generated and renewed!</span><br><span class="line">call cd ./public/</span><br><span class="line">call git add --all</span><br><span class="line">echo on</span><br><span class="line">call git commit -m &quot;new post:  %date%&quot;</span><br><span class="line">call git push -u origin</span><br></pre></td></tr></table></figure>
 
+<ol start="3">
+<li><h5 id="newone-bat：创建新的post并打开"><a href="#newone-bat：创建新的post并打开" class="headerlink" title="newone.bat：创建新的post并打开"></a>newone.bat：创建新的post并打开</h5></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set /p name=input name:</span><br><span class="line">echo name:%name%</span><br><span class="line">echo please wait</span><br><span class="line">call hexo new post %name%</span><br><span class="line">start /d &quot;C:\Program Files\Typora&quot; typora.exe &quot;E:\Blog\Hexo-blog\source\_posts\%name%.md&quot;</span><br></pre></td></tr></table></figure>
+
+<p>效果还行，学习了下<code>echo</code>的基本操作，熟悉了下<code>call</code>,<code>date</code>,<code>start</code>等命令。</p>
+<p>PS</p>
+<p>记录下遇到的一个有趣问题（被解决了的才能被称为有趣:joy::joy:）</p>
+<p>PPS</p>
+<p>刚发现markdown支持颜文字哈</p>
+<p><code>:scream:</code>是:scream:<br><code>:kissing_heart:</code>是:kissing_heart:<br><code>:yum:</code>是:yum:</p>
+<p><img src="https://img-blog.csdn.net/20181007202942931?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzOTgyMjMy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="截图"></p>
+<hr>
+<p>关于后续的cmd命令学习，找了几篇总结的比较全的博客，记录如下。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lsgxeva/p/10694546.html">Windows批处理(cmd/bat)常用命令小结 - lsgxeva - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="http://xstarcd.github.io/wiki/windows/windows_cmd_summary_commands.html">批处理常用命令总结 - 批处理命令简介 (xstarcd.github.io)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30411819/article/details/96188519">cmd 与 bash 基础命令入门_weixin_30411819的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.360doc.com/content/18/0319/21/11935121_738543065.shtml">shell脚本和批处理脚本有什么区别？ (360doc.com)</a></p>
 
       
     </div>
